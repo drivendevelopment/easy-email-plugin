@@ -4,7 +4,7 @@ Tags: emails, administration, email not working, email going to spam, order noti
 Requires at least: 6.4
 Requires PHP: 7.4
 Tested up to: 6.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ Visit Settings > Easy Email, click the 'Connect' button, and follow the prompts 
 No. Easy Email is intended only for sending transactional emails (e.g. welcome emails, password resets, order notifications, etc.). If you need to send mass emails (such as marketing emails), we recommend using one of the many services that specialize in this.
 
 == Changelog ==
+
+= 1.0.1 (TBD) =
+* Fix: HTML messages being sent as plain text
 
 = 1.0.0 (January 15, 2024) =
 * Initial release

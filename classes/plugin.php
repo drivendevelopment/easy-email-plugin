@@ -138,7 +138,8 @@ class Plugin extends Singleton {
         $app_url        = $this->get_app_url();
         $connect_url    = add_query_arg(
             array(
-                'url' => untrailingslashit( site_url() ),
+                'url'   => untrailingslashit( site_url() ),
+                'name'  => get_bloginfo( 'name' ),
             ),
             $app_url . '/connect'
         );

@@ -17,8 +17,10 @@ class Mailer extends PHPMailer {
 
     public $easy_email_api_key;
 
-    public function send() {
+    public function send() {        
         try {
+            $is_html = self::CONTENT_TYPE_TEXT_HTML == $this->ContentType;
+
             $request = array(
                 'From'      => $this->From,
                 'FromName'  => $this->FromName,
@@ -26,8 +28,8 @@ class Mailer extends PHPMailer {
                 'Cc'        => $this->getCcAddresses(),
                 'Bcc'       => $this->getBccAddresses(),
                 'Subject'   => $this->Subject,
-                'HtmlBody'  => $this->isHTML() ? $this->Body : '',
-                'TextBody'  => $this->isHTML() ? '' : $this->Body,
+                'HtmlBody'  => $is_html ? $this->Body : '',
+                'TextBody'  => $is_html ? $this->AltBody : $this->Body,
                 'ReplyTo'   => $this->getReplyToAddresses(),
                 'Headers'   => $this->getCustomHeaders(),
             );
