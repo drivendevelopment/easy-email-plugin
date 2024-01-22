@@ -4,7 +4,7 @@
 Plugin Name: Easy Email
 Plugin URI: https://wpeasyemail.com/
 Description: Easily send emails from WordPres. No SMTP required! Fast and easy setup.
-Version: 1.0.1
+Version: 1.0.2
 Author: Wicked Plugins
 Text Domain: easy-email
 License: GPLv2 or later
