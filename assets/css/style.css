@@ -1,0 +1,68 @@
+:root {
+    --ee-accent: #785FD5;
+}
+
+body.ee-connect #wpbody-content {
+    padding: 0;
+}
+
+body.ee-connect #wpfooter {
+    display: none;
+}
+
+body.ee-connect #wpcontent {
+    padding: 0;
+}
+
+#ee-connect {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #faf9fe 0%,#e2eefe 40%,#e4f6f6 100%);
+    min-height: calc(100vh - 32px);
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+#ee-connect p {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+#ee-connect .action {
+    margin: 40px 0;
+}
+
+#ee-connect .help {
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#ee-connect .confetti {
+    margin-top: 40px;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.ee-btn {
+	display: inline-block;
+	border-radius: 8px;
+	color: #fff;
+	text-decoration: none;
+	background: var(--ee-accent);
+	padding: 8px 18px;
+	border: solid 2px var(--ee-accent);
+	cursor: pointer;
+	font-size: 20px;
+	line-height: 26px;
+	font-weight: normal;
+    transition: 0.25s ease;
+}
+
+.ee-btn:focus,
+.ee-btn:hover {
+	background: #fff;
+	color: var(--ee-accent);
+}

@@ -32,16 +32,18 @@ class Plugin extends Singleton {
 	protected static $instance;
 
     public function __construct() {
+        // Initialize UI instance
+        UI::get_instance();
+
         add_filter( 'wp_mail_from', array( $this, 'maybe_replace_from_email' ) );
 		add_filter(
 			'plugin_action_links_easy-email/easy-email.php',
 			array( $this, 'add_settings_to_plugin_action_links' )
 		);     
         
-        add_action( 'phpmailer_init',   array( $this, 'phpmailer_init' ), 10, 1 );
-        add_action( 'admin_init',       array( $this, 'admin_init' ) );
-		add_action( 'admin_menu',       array( $this, 'add_settings_to_admin_menu' ) );
-		add_action( 'admin_notices', 	array( $this, 'admin_notices' ) );
+        add_action( 'phpmailer_init',           array( $this, 'phpmailer_init' ), 10, 1 );
+        add_action( 'admin_init',               array( $this, 'admin_init' ) );
+		add_action( 'admin_notices', 	        array( $this, 'admin_notices' ) );
     }
 
     /**
@@ -54,6 +56,22 @@ class Plugin extends Singleton {
     public function get_action() {
         return isset( $_GET['action'] ) ? sanitize_key( $_GET['action'] ) : false;
     }
+
+	/**
+	 * Returns the plugin's version.
+	 */
+	public function get_version() {
+		static $version = false;
+
+		$plugin_file = dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'easy-email.php';
+
+		if ( ! $version && function_exists( 'get_plugin_data' ) ) {
+            $plugin_data 	= get_plugin_data( $plugin_file );
+            $version 		= $plugin_data['Version'];
+		}
+
+		return $version;
+	}
 
     /**
      * WordPress init hook.
@@ -116,46 +134,6 @@ class Plugin extends Singleton {
         return $links;
     }
 
-	/**
-	 * WordPress admin_menu hook to add our settings page.
-	 */
-	public function add_settings_to_admin_menu() {
-		add_submenu_page(
-            'options-general.php',
-            __( 'Easy Email Settings', 'easy-email' ),
-            __( 'Easy Email', 'easy-email' ),
-            'manage_options',
-            'easy_email_settings',
-            array( $this, 'settings_page' ),
-        );
-	} 
-
-    /**
-     * Displays the settings page.
-     */
-    public function settings_page() {
-        $api_key        = $this->get_api_key();
-        $app_url        = $this->get_app_url();
-        $connect_url    = add_query_arg(
-            array(
-                'url'   => untrailingslashit( site_url() ),
-                'name'  => get_bloginfo( 'name' ),
-            ),
-            $app_url . '/connect'
-        );
-        $disconnect_url  = add_query_arg(
-            array(
-                'action' => 'easy_email_disconnect',
-            ),
-            menu_page_url( 'easy_email_settings', false )
-        );
-
-        $connect_url    = wp_nonce_url( $connect_url, 'easy_email_connect' );
-        $disconnect_url = wp_nonce_url( $disconnect_url, 'easy_email_disconnect' );
-
-        include( dirname( dirname( __FILE__ ) ) . '/templates/settings.php' );
-    }
-
     /**
      * Returns the Easy Email API key.
      *
@@ -164,6 +142,16 @@ class Plugin extends Singleton {
      */
     public function get_api_key() {
         return get_option( 'easy_email_api_key', false );
+    }
+
+    /**
+     * Returns the base URL to the Easy Email site.
+     * 
+     * @return string
+     *  The site's base URL without the trailing slash.     
+     */
+    public function get_site_url() {
+        return apply_filters( 'easy_email_site_url', 'https://wpeasyemail.com' );
     }
 
     /**
@@ -191,7 +179,8 @@ class Plugin extends Singleton {
         update_option( 'easy_email_api_key', sanitize_key( $_GET['api_key'] ) );
 
         $url = menu_page_url( 'easy_email_settings', false );
-        $url = add_query_arg( 'easy_email_notice', __( 'Success! Your site has been connected to Easy Email. Happy sending.', 'easy-email' ), $url );
+        $url = add_query_arg( 'action', 'easy_email_connect_success', $url );
+        //$url = add_query_arg( 'easy_email_notice', __( 'Success! Your site has been connected to Easy Email. Happy sending.', 'easy-email' ), $url );
 
         // Redirect back to settings page
         wp_safe_redirect( $url );
@@ -212,7 +201,6 @@ class Plugin extends Singleton {
         delete_option( 'easy_email_api_key' );
 
         $url = menu_page_url( 'easy_email_settings', false );
-        $url = add_query_arg( 'easy_email_notice', __( 'Successfully disconnected.', 'easy-email' ), $url );
 
         // Redirect back to settings page
         wp_safe_redirect( $url );

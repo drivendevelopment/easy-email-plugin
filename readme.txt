@@ -39,7 +39,11 @@ No. Easy Email is intended only for sending transactional emails (e.g. welcome e
 
 == Changelog ==
 
-= 1.0.1 (TBD) =
+= 1.0.2 (January 21, 2024) =
+* Tweak: enhance styling of connection screens
+* Tweak: confirm before disconnecting
+
+= 1.0.1 (January 18, 2024) =
 * Fix: HTML messages being sent as plain text
 
 = 1.0.0 (January 15, 2024) =
