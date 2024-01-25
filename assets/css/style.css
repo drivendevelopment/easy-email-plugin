@@ -14,6 +14,10 @@ body.ee-connect #wpcontent {
     padding: 0;
 }
 
+body.ee-connect #wpcontent > .notice {
+    display: none !important;
+}
+
 #ee-connect {
     display: flex;
     align-items: center;
