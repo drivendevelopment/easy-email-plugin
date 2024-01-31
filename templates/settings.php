@@ -1,11 +1,17 @@
+<?php
+
+// Disable direct load
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+?>
 <div class="wrap">
-    <h1><?php _e( 'Easy Email Settings', 'easy-email' ); ?></h1>
+    <h1><?php esc_html_e( 'Easy Email Settings', 'easy-email' ); ?></h1>
     <p>
-        <?php echo sprintf( __( 'Your site is connected to Easy Email. <a href="%s" target="_blank">Log into your Easy Email account</a> to manage your site.', 'easy-email' ), esc_url( $app_url ) ); ?>
+        <?php echo wp_kses_post( sprintf( __( 'Your site is connected to Easy Email. <a href="%s" target="_blank">Log into your Easy Email account</a> to manage your site.', 'easy-email' ), esc_url( $app_url ) ) ); ?>
     </p>
     <p>
         <a id="ee-disconnect" class="button button-primary" href="<?php echo esc_url( $disconnect_url ); ?>">
-            <?php _e( 'Disconnect from Easy Email', 'easy-email' ); ?>
+            <?php esc_html_e( 'Disconnect from Easy Email', 'easy-email' ); ?>
         </a>
     </p>
 </div>
@@ -13,7 +19,7 @@
     ( function( $ ){
         $( function(){
             $( '#ee-disconnect' ).click( function( e ){
-                if ( ! confirm( '<?php _e( 'Are you sure you want to disconnect your site from Easy Email?', 'easy-email' ); ?>' ) ) {
+                if ( ! confirm( '<?php esc_html_e( 'Are you sure you want to disconnect your site from Easy Email?', 'easy-email' ); ?>' ) ) {
                     e.preventDefault();
                 }
             } );

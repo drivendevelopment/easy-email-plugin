@@ -3,9 +3,7 @@
 namespace Easy_Email;
 
 // Disable direct load
-if ( ! defined( 'ABSPATH' ) ) {
-	die( 'Access denied.' );
-}
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Singleton base class.

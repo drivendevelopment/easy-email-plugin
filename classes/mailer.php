@@ -2,6 +2,9 @@
 
 namespace Easy_Email;
 
+// Disable direct load
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 use Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 

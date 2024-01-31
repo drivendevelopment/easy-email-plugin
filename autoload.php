@@ -1,5 +1,8 @@
 <?php
 
+// Disable direct load
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 spl_autoload_register( function( $class ){
     $path       = strtolower( $class );
     $path       = str_replace( '_', '-', $path );
