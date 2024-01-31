@@ -27,6 +27,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 */
 
+// Disable direct load
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 include( 'autoload.php' );
 include( 'classes/plugin.php' );
 
