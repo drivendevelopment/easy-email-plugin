@@ -4,7 +4,7 @@ Tags: emails, administration, email not working, email going to spam, order noti
 Requires at least: 6.4
 Requires PHP: 7.4
 Tested up to: 6.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,9 @@ All accounts start with 100 free emails. After that, you need to subscribe to a 
 3. The Easy Email dashboard
 
 == Changelog ==
+
+= 1.0.3 (February 9, 2024) = 
+* Tweak: add additional escaping to variables in template files
 
 = 1.0.2 (January 21, 2024) =
 * Tweak: enhance styling of connection screens

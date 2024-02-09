@@ -14,10 +14,6 @@ jobs:
       uses: dawidd6/action-get-tag@v1
       with:
         strip_v: true
-    - name: Build
-      run: |
-        npm install
-        npm run build
     - name: WordPress Plugin Deploy
       uses: 10up/action-wordpress-plugin-deploy@stable
       env:
