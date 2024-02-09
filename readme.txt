@@ -1,6 +1,6 @@
 === Easy Email ===
 Contributors: wickedplugins
-Tags: emails, administration, email not working, email going to spam, order notifications, password reset email, welcome email
+Tags: emails, administration, email not working, email going to spam, order notifications, password reset email, welcome email, smtp, spf, dmarc, dkim
 Requires at least: 6.4
 Requires PHP: 7.4
 Tested up to: 6.4
@@ -20,6 +20,11 @@ Tired of your website's emails not getting delivered or going to spam? Use Easy 
 * No SMTP server/account required
 * Works with all popular plugins that need to send emails including Gravity Forms, Contact Form 7, WP Forms, Ninja Forms, WooCommerce, etc.
 
+= How to Get Started =
+1. Install the Easy Email plugin
+2. Go to Settings > Easy Email and click the 'Connect' button
+3. Follow the prompts to create your free Easy Email account
+
 = Support =
 Please see the [FAQ section]( https://wordpress.org/plugins/easy-email/#faq) for common questions or [visit the support forum]( https://wordpress.org/support/plugin/easy-email) if you have a question or need help.
 
@@ -36,6 +41,9 @@ Visit Settings > Easy Email, click the 'Connect' button, and follow the prompts 
 
 = Can I use Easy Email to send mass emails? =
 No. Easy Email is intended only for sending transactional emails (e.g. welcome emails, password resets, order notifications, etc.). If you need to send mass emails (such as marketing emails), we recommend using one of the many services that specialize in this.
+
+= Can I use Easy Email for test sites? =
+No. Easy Email is intended for production site only.
 
 == Changelog ==
 
