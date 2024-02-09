@@ -1,0 +1,14 @@
+/.git
+/.github
+/.wordpress-org
+/node_modules
+/src
+
+.babelrc
+.distignore
+.DS_Store
+.gitignore
+package-lock.json
+package.json
+webpack.config.js
+webpack.prod.js

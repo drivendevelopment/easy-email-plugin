@@ -8,17 +8,18 @@ Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-The easy way to ensure your website's emails always get delivered to the inbox.
+The easy way to fix WordPress emails not sending or going to spam. Setup on only takes a few minutes.
 
 == Description ==
 
-Tired of your website's emails not getting delivered or going to spam? Use Easy Email to send your site's emails and never worry again if your emails are getting through. It only takes a few minutes to set up and there's no complicated email server settings to configure&mdash;simply install the plugin and we'll guide you through the rest.
+Are emails from your WordPress site not sending (or going to spam)? Use Easy Email and never worry again if your emails are getting through. It only takes a few minutes to set up and there's no complicated settings to configure&mdash;simply install the plugin and we'll guide you through the rest.
 
 = Features =
 * Set up in just a few minutes
-* Instantly fixes common email problems such as emails not sending or going to spam
-* No SMTP server/account required
+* Instantly fixes common WordPress email problems such as emails not sending or going to spam
 * Works with all popular plugins that need to send emails including Gravity Forms, Contact Form 7, WP Forms, Ninja Forms, WooCommerce, etc.
+* No SMTP server/account required
+* No need to set up/configure SPF, DKIM, DMARC, etc.
 
 = How to Get Started =
 1. Install the Easy Email plugin
@@ -26,7 +27,7 @@ Tired of your website's emails not getting delivered or going to spam? Use Easy 
 3. Follow the prompts to create your free Easy Email account
 
 = Support =
-Please see the [FAQ section]( https://wordpress.org/plugins/easy-email/#faq) for common questions or [visit the support forum]( https://wordpress.org/support/plugin/easy-email) if you have a question or need help.
+Please see the [FAQ section](https://wordpress.org/plugins/easy-email/#faq) for common questions or [visit the support forum](https://wordpress.org/support/plugin/easy-email) if you have a question or need help.
 
 == Installation ==
 
@@ -43,7 +44,16 @@ Visit Settings > Easy Email, click the 'Connect' button, and follow the prompts 
 No. Easy Email is intended only for sending transactional emails (e.g. welcome emails, password resets, order notifications, etc.). If you need to send mass emails (such as marketing emails), we recommend using one of the many services that specialize in this.
 
 = Can I use Easy Email for test sites? =
-No. Easy Email is intended for production site only.
+No. Easy Email is intended for production sites only. For test sites, you may want to consider a service such as [Mail Debug](https://debugmail.io/).
+
+= Is Easy Email free? =
+All accounts start with 100 free emails. After that, you need to subscribe to a plan. See [our pricing page](https://wpeasyemail.com/pricing/) for plans.
+
+== Screenshots ==
+
+1. Step 1: after installing the Easy Email plugin, click the Connect button
+2. Step 2: register for an Easy Email account
+3. The Easy Email dashboard
 
 == Changelog ==
 
