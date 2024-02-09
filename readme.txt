@@ -31,7 +31,8 @@ Please see the [FAQ section](https://wordpress.org/plugins/easy-email/#faq) for 
 
 == Installation ==
 
-1. Log into your WordPress site, go to the Plugins screen, click 'Add New Plugin', and search for 'Easy Email'
+1. Download the Easy Email plugin
+1. Log into your WordPress site, go to the Plugins screen, click 'Add New Plugin', click 'Upload Plugin', click the 'Browse' button and select the plugin zip file downloaded in step 1
 1. Click the 'Install Now' button. Once the plugin has been installed, click 'Activate'
 1. Visit Settings > Easy Email, click the 'Connect' button, and follow the prompts to connect your site to Easy Email
 
